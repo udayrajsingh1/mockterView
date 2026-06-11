@@ -6,6 +6,8 @@ function ProblemPage() {
         <>
         <div className="border border-solid-black flex h-10">
             <h1>MockterView</h1>
+            <button >Run</button>
+            <button>Submit</button>
         </div>
         <div className="border border-solid-black flex h-screen w-screen">
             <div className="border border-solid-black flex h-screen w-1/2">

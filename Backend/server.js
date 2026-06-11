@@ -1,7 +1,11 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+import protect from './middlewares/authMiddleware.js';
+
 import executeRoute from "./routes/executeRoute.js"
+import authRoute from "./routes/authRoute.js"
 
 dotenv.config()
 const PORT = process.env.PORT || 3000;
@@ -15,7 +19,12 @@ app.get("/", (req, res) => {
 
 app.use(express.json());
 
-app.use('/api/execute', executeRoute);
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("MongoDb connected"))
+.catch((err) => console.error("MongoDb connection error"))
+
+app.use('/api/execute', protect, executeRoute);
+app.use("/api/auth", authRoute)
 
 
 app.listen(PORT, () => {
