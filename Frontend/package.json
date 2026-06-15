@@ -12,8 +12,11 @@
   "dependencies": {
     "@monaco-editor/react": "^4.8.0-rc.3",
     "@tailwindcss/vite": "^4.3.0",
+    "axios": "^1.17.0",
+    "cors": "^2.8.6",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "react-router-dom": "^7.17.0",
     "react-sandbox-editor": "^2.0.1",
     "tailwindcss": "^4.3.0"
   },

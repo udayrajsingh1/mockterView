@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from "cors";
 
 import protect from './middlewares/authMiddleware.js';
 
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 
 const app = express();
+app.use(cors())
 
 app.get("/", (req, res) => {
     res.status(200).send("Hello World")
